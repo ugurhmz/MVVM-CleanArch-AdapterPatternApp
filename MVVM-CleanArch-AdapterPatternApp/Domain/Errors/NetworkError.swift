@@ -6,3 +6,19 @@
 //
 
 import Foundation
+
+enum NetworkError: Error {
+    case decode               // JSON parçalanamadı
+    case invalidURL           // URL bozuk
+    case serverError(code: Int) // 404, 500 vb. hatalar
+    case unknown(String)      // Beklenmeyen durumlar
+    
+    var localizedDescription: String {
+        switch self {
+        case .decode: return "Veri modeli işlenemedi."
+        case .invalidURL: return "Geçersiz URL."
+        case .serverError(let code): return "Sunucu hatası: \(code)"
+        case .unknown(let msg): return "Bilinmeyen hata: \(msg)"
+        }
+    }
+}
