@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+protocol NetworkServiceProtocol: Sendable {
+    func request<T: Decodable>(_ endpoint: EndpointContract, model: T.Type) async throws -> T
+}
