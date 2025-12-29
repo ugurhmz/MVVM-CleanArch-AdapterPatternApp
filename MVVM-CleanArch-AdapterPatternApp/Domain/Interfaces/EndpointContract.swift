@@ -7,6 +7,11 @@
 
 import Foundation
 
+enum RequestEncoding {
+    case url
+    case json
+}
+
 enum RequestMethod: String {
     case get = "GET"
     case post = "POST"
@@ -20,4 +25,6 @@ protocol EndpointContract  {
     var method: RequestMethod { get }
     var headers: [String: String]? { get }
     var body: [String: Any]? { get }
+    
+    var encoding: RequestEncoding { get }
 }
