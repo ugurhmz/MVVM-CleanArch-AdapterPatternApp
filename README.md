@@ -1,5 +1,50 @@
 # 📘 Project: MVVM-CleanArch-AdapterPatternApp
 
+# MVVM-CleanAdapterPatternApp
+
+Bu proje, iOS uygulamalarında ölçeklenebilirlik, test edilebilirlik ve sürdürülebilirliği artırmak amacıyla **MVVM**, **Clean Architecture** ve **Adapter Pattern** yapılarının harmanlandığı modern bir mimari şablonudur.
+<br>
+## 📂 Proje Dizin Yapısı
+
+Projenin klasör hiyerarşisi, katmanlar arası bağımlılıkları minimize edecek ve "Separation of Concerns" prensibini uygulayacak şekilde tasarlanmıştır.
+
+```text
+MVVM-CleanAdapterPatternApp
+│
+├── 📂 Application                <-- (Uygulama Yaşam Döngüsü & Bağımlılık Enjeksiyonu)
+│     ├── 📝 AppDelegate.swift
+│     ├── 📝 SceneDelegate.swift
+│     └── 📝 AppFactory.swift     <-- (Composition Root: Tüm katmanların birleştiği yer)
+│
+├── 📂 Domain                     <-- (Çekirdek Katman - Saf Swift, 3. Parti Kütüphane YOK)
+│     ├── 📂 Interfaces           <-- (Sözleşmeler / Protokoller)
+│     │     ├── 📝 NetworkServiceProtocol.swift
+│     │     └── 📝 EndpointContract.swift
+│     ├── 📂 Entities             <-- (Saf Veri Modelleri)
+│     │     └── 📝 User.swift
+│     └── 📂 Errors               <-- (Hata Yönetimi)
+│           └── 📝 NetworkError.swift
+│
+├── 📂 Infrastructure             <-- (Dış Dünyaya Erişim - Framework Implementasyonları)
+│     └── 📂 Networking
+│           ├── 📝 AlamofireNetworkAdapter.swift  <-- (Adapter Pattern: Alamofire sarmalayıcı)
+│           └── 📝 UserEndpoint.swift             <-- (API Konfigürasyonları)
+│
+├── 📂 Presentation               <-- (Sunum Katmanı - UIKit & MVVM)
+│     └── 📂 Scenes               <-- (Ekranlar)
+│           └── 📂 Home
+│                 ├── 📝 HomeViewModel.swift
+│                 └── 📝 HomeViewController.swift
+│
+├── 🧱 Assets.xcassets
+├── ⚙️ Info.plist
+└── 🚀 LaunchScreen
+```
+
+
+<br>
+
+
 <img width="3616" height="1184" alt="Gemini_Generated_Image_ptwxehptwxehptwx" src="https://github.com/user-attachments/assets/4a194352-b9ef-4d57-b61c-21253ed5ed3f" />
 
 
