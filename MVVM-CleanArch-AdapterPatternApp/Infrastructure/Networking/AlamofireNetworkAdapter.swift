@@ -36,7 +36,7 @@ final class AlamofireNetworkAdapter: NetworkServiceProtocol {
             parameters: endpoint.body,
             encoding: encoding,
             headers: HTTPHeaders(endpoint.headers ?? [:]),
-        ).serializingDecodable(model)
+        ).serializingDecodable(T.self)
         
         let response = await task.response
         
@@ -44,7 +44,7 @@ final class AlamofireNetworkAdapter: NetworkServiceProtocol {
         case .success(let data):
             return data
         case .failure(let error):
-            if let statusCode = error.responseCode {
+            if let statusCode = response.response?.statusCode {
                 throw NetworkError.serverError(code: statusCode)
             } else {
                 throw NetworkError.unknown(error.localizedDescription)

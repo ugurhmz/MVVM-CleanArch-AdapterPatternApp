@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum NetworkError: Error {
+enum NetworkError: Error, Sendable {
     case decode               // JSON parçalanamadı
     case invalidURL           // URL bozuk
     case serverError(code: Int) // 404, 500 vb. hatalar

@@ -19,12 +19,12 @@ enum RequestMethod: String {
     case put = "PUT"
 }
 
-protocol EndpointContract  {
+protocol EndpointContract: Sendable{
     var baseURL: String { get }
     var path: String { get }
     var method: RequestMethod { get }
     var headers: [String: String]? { get }
-    var body: [String: Any]? { get }
+    var body: [String: String]? { get }
     
     var encoding: RequestEncoding { get }
 }

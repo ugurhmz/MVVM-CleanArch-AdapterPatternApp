@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum RickAndMortyEndpoint: EndpointContract {
+enum RickAndMortyEndpoint: EndpointContract, Sendable {
     case getCharacters
     
     var baseURL: String { "https://rickandmortyapi.com/api" }
@@ -34,5 +34,5 @@ enum RickAndMortyEndpoint: EndpointContract {
     }
     
     var headers: [String: String]? { nil }
-    var body: [String: Any]? { nil }
+    var body: [String: String]? { nil }
 }
