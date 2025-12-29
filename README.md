@@ -1,4 +1,5 @@
-<img width="3616" height="1184" alt="Gemini_Generated_Image_ptwxehptwxehptwx" src="https://github.com/user-attachments/assets/d05a0e1a-7bc9-459c-9963-33f4b1b95ba4" /># 📘 Project: MVVM-CleanArch-AdapterPatternApp
+# 📘 Project: MVVM-CleanArch-AdapterPatternApp
+
 <img width="3616" height="1184" alt="Gemini_Generated_Image_ptwxehptwxehptwx" src="https://github.com/user-attachments/assets/4a194352-b9ef-4d57-b61c-21253ed5ed3f" />
 
 
